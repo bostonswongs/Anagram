@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893557118138",
+    "project_id": "anagram-208e5",
+    "storage_bucket": "anagram-208e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893557118138:android:db45edb55b510d3dad5e83",
+        "android_client_info": {
+          "package_name": "com.example.anagram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893557118138-874sppl09sdokasc7mt099l048p6vffa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMWf72g0v2CAXLI26xeaXjxloBtWTmTXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893557118138-874sppl09sdokasc7mt099l048p6vffa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

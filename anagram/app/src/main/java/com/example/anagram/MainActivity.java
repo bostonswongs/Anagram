@@ -1,5 +1,6 @@
 package com.example.anagram;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.FirebaseApp;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -19,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Context context = getApplicationContext();
+        FirebaseApp.initializeApp(context);
         setContentView(R.layout.activity_main);
         wordTv = (TextView) findViewById(R.id.wordTv);
 //        score = (TextView) findViewById(R.id.highScore);
@@ -46,16 +51,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (wordToFind.equals(w)) {
             Toast.makeText(this, "Congratulations ! You found the word " + wordToFind, Toast.LENGTH_SHORT).show();
-            newGame();
+//            score++;
+            newWord(0);
         } else {
             Toast.makeText(this, "Retry !", Toast.LENGTH_SHORT).show();
+//            strikes++;
+//            if(strikes > 3) {
+//                Toast.makeText(this, "3 strikes and you're out!", Toast.LENGTH_SHORT).show();
+//            }
         }
     }
 
-    private void newGame() {
-        wordToFind = Anagram.randomWord();
+    private void newWord(int score) {
+        wordToFind = Anagram.randomWord(score);
         String wordShuffled = Anagram.shuffleWord(wordToFind);
         wordTv.setText(wordShuffled);
         wordEnteredTv.setText("");
+    }
+
+    private void newGame() {
+        newWord(0);
+//        wordToFind = Anagram.randomWord(score);
+//        String wordShuffled = Anagram.shuffleWord(wordToFind);
+//        wordTv.setText(wordShuffled);
+//        wordEnteredTv.setText("");
     }
 }
