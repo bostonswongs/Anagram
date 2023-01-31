@@ -45,12 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param activity
      */
     public int verifyStoragePermissions(Activity activity) {
-        Toast.makeText(this, "Please Allow Permission for the app to work!", Toast.LENGTH_LONG).show();
         // Check if we have write permission
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE);
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
             // We don't have permission so prompt the user
+            Toast.makeText(this, "Please Allow Permission for the app to work!", Toast.LENGTH_LONG).show();
+
             ActivityCompat.requestPermissions(
                     activity,
                     PERMISSIONS_STORAGE,
