@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static int score = 0, highScore = 0, strikes = 3, permission = 0;
 
+    private boolean loadOccurred = false;
+
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -115,7 +117,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void newWord() {
         wordToFind = Anagram.randomWord(score);
         if (permission == PackageManager.PERMISSION_GRANTED) {
-            loadAllWords(context);
+            if(!loadOccurred) {
+                loadAllWords(context);
+                loadOccurred = true;
+            }
         } else {
             permission = verifyStoragePermissions(this);
         }
