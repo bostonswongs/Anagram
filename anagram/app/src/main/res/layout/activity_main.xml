@@ -34,12 +34,35 @@
         tools:context=".MainActivity">
 
         <TextView
+            android:id="@+id/highScoreTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="High Score: "
+            android:layout_marginBottom="20dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#FFD700"/>
+
+        <TextView
+            android:id="@+id/scoreTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Score: "
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#ADD1FF"/>
+
+        <TextView
             android:id="@+id/wordTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_below="@id/highScoreTV"
             android:text="Word To Find"
-            android:textSize="30sp"
+            android:layout_marginTop="100dp"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
         <EditText
@@ -59,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/wordEnteredTv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="250dp"
             android:text="Validate"
             tools:ignore="UnknownId" />
 
@@ -69,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/validate"
             android:layout_centerHorizontal="true"
-            android:text="Word To Find"
+            android:text="Guess Remaining:"
             android:textSize="20sp"
             android:textStyle="italic" />
 
