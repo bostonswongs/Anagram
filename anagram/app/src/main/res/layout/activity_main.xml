@@ -3,8 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -20,7 +22,7 @@
             android:label="Anagrams"
             app:popupTheme="@style/Theme.Anagram.PopupOverlay" />
 
-  </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -38,11 +40,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="High Score: "
             android:layout_marginBottom="20dp"
+            android:text="High Score: "
+            android:textColor="#F2FFD700"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="#FFD700"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/scoreTV"
@@ -74,7 +76,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:inputType="textCapCharacters|textNoSuggestions"
-            android:hint="Guess Here"/>
+            android:hint="Guess Here" />
 
         <Button
             android:id="@+id/validate"

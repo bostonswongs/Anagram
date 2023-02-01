@@ -135,7 +135,7 @@ public class Anagram {
                 tier = 0;
             }
         }
-        if(tier == 3 && score > 35) {
+        if(tier == 3) {
             int randIndex = RANDOM.nextInt(3);
             return WORDS[randIndex][RANDOM.nextInt(WORDS_LEN[randIndex])];
         }
